@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Guardian | Next-Gen Multi-Modal AI Platform for Women's Safety</title>
+  <meta name="description" content="Next-Generation Autonomous AI Women's Safety Platform combining Spatial Computer Vision, Acoustic Voice Intelligence, Predictive AI, and Emergency Response.">
+  
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- BACKGROUND CANVAS & CYBER GRID OVERLAY -->
+  <canvas id="neural-canvas"></canvas>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- STICKY TRANSPARENT NAVBAR -->
+  <header id="navbar" class="sticky-nav">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="#home" class="nav-brand" onclick="app.switchView('landing')">
+        <div class="shield-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00F2FE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M12 8v4" stroke="#00FF9D"/>
+            <path d="M12 16h.01" stroke="#00FF9D"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">AI GUARDIAN</span>
+          <span class="system-badge">MULTI-MODAL DEFENSE MATRIX</span>
+        </div>
+      </a>
+
+      <!-- Menu Items -->
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link active" data-tab="landing" onclick="app.switchView('landing')">Home</a>
+        <a href="#features" class="nav-link" data-tab="features" onclick="app.scrollToSection('features-section')">Features</a>
+        <a href="#dashboard" class="nav-link" data-tab="dashboard" onclick="app.switchView('dashboard', 'overview')">Dashboard</a>
+        <a href="#camera" class="nav-link" data-tab="camera" onclick="app.switchView('dashboard', 'camera')">Camera AI</a>
+        <a href="#voice" class="nav-link" data-tab="voice" onclick="app.switchView('dashboard', 'voice')">Voice AI</a>
+        <a href="#map" class="nav-link" data-tab="map" onclick="app.switchView('dashboard', 'map')">Live Map</a>
+        <a href="#analytics" class="nav-link" data-tab="analytics" onclick="app.switchView('dashboard', 'analytics')">Analytics</a>
+      </nav>
+
+      <!-- Quick Actions -->
+      <div class="nav-actions">
+        <div class="protection-pill">
+          <span class="status-dot emerald-pulse"></span>
+          <span>AI SHIELD ENGAGED</span>
+        </div>
+        <button class="btn btn-sos-nav" onclick="app.triggerSosModal()">
+          <span>⚡ INSTANT SOS</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <main id="main-content">
+
+    <!-- ==================== LANDING PAGE VIEW ==================== -->
+    <div id="view-landing" class="app-view active">
+      
+      <!-- Hero Section -->
+      <section class="hero-section" id="hero">
+        <div class="system-pill-badge">
+          <span class="badge-tag-cyan">ENTERPRISE AI</span>
+          <span>SPATIAL COMPUTER VISION & VOICE DISTRESS MATRIX</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="glow-text">AI GUARDIAN</span>
+        </h1>
+        <h2 class="hero-subtitle">Protecting Women Through Artificial Intelligence</h2>
+        <p class="hero-description">
+          An intelligent multi-modal AI safety platform combining Spatial Computer Vision, Voice Distress Detection, Predictive Risk Analytics, and Real-Time Automated Emergency Response to provide proactive protection for women.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="app.switchView('dashboard', 'overview')">
+            <span>🛡️ Start Protection</span>
+          </button>
+          <button class="btn btn-secondary" onclick="app.switchView('dashboard', 'camera')">
+            <span>▶️ Watch Live Demo</span>
+          </button>
+        </div>
+
+        <div class="hero-graphic-shield">
+          <div class="shield-outer-ring"></div>
+          <div class="shield-inner-icon">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#00F2FE" stroke-width="1.8">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Animated Features Section (12 Feature Cards) -->
+      <section class="features-section" id="features-section">
+        <div class="section-header">
+          <span class="section-tag">AUTONOMOUS SECURITY CAPABILITIES</span>
+          <h2 class="section-title">360° Proactive Defense Engine</h2>
+          <p class="section-desc">Powered by sub-millisecond neural network inference running real-time multi-stream spatial vision and acoustic telemetry.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">🎙️</div>
+            <h3 class="feature-title">AI Voice Distress Detection</h3>
+            <p class="feature-desc">Real-time acoustic neural network analyzing ambient vocal pitch, acoustic stress spikes, and emergency keywords ("Help", "Save me").</p>
+          </div>
+          <!-- 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">👁️</div>
+            <h3 class="feature-title">Real-Time Threat Detection</h3>
+            <p class="feature-desc">Multi-stream video inference detecting suspicious follow distances, rapid physical approach, and aggressive gestures.</p>
+          </div>
+          <!-- 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">📹</div>
+            <h3 class="feature-title">AI Camera Monitoring</h3>
+            <p class="feature-desc">Sub-millisecond FP16 keypoint pose estimation hardware acceleration to detect weapons and physical altercations.</p>
+          </div>
+          <!-- 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">⚡</div>
+            <h3 class="feature-title">Smart SOS Dispatch</h3>
+            <p class="feature-desc">Automated emergency dispatch triggering 911 services, local police patrol vectors, and encrypted video evidence uploads.</p>
+          </div>
+          <!-- 5 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">📍</div>
+            <h3 class="feature-title">Live GPS Tracking</h3>
+            <p class="feature-desc">Continuous high-precision spatial positioning sharing live encrypted telemetry with designated emergency contacts.</p>
+          </div>
+          <!-- 6 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">🗺️</div>
+            <h3 class="feature-title">Safe Route Recommendation</h3>
+            <p class="feature-desc">Generative pathfinding calculating well-lit, high-foot-traffic routes avoiding real-time crime index hotspots.</p>
+          </div>
+          <!-- 7 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">👥</div>
+            <h3 class="feature-title">Trusted Contacts Network</h3>
+            <p class="feature-desc">Instant multi-channel SMS, Voice Call, and Push broadcast system notifying family and security guardians in seconds.</p>
+          </div>
+          <!-- 8 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">📡</div>
+            <h3 class="feature-title">Emergency Broadcasting</h3>
+            <p class="feature-desc">Direct mesh network relay broadcasting location beacons to nearby AI Guardian users and law enforcement units.</p>
+          </div>
+          <!-- 9 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">🤖</div>
+            <h3 class="feature-title">AI Chat Assistant</h3>
+            <p class="feature-desc">Conversational LLM assistant providing real-time safety guidance, de-escalation steps, and one-tap emergency triggers.</p>
+          </div>
+          <!-- 10 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">🔒</div>
+            <h3 class="feature-title">Evidence Vault</h3>
+            <p class="feature-desc">Tamper-proof cloud vault storing encrypted audio recordings, video buffers, and telemetry for legal investigation.</p>
+          </div>
+          <!-- 11 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">📊</div>
+            <h3 class="feature-title">Predictive Risk Analysis</h3>
+            <p class="feature-desc">Time-series forecasting models predicting localized danger probability based on historical incidence & temporal metrics.</p>
+          </div>
+          <!-- 12 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">⏱️</div>
+            <h3 class="feature-title">Incident Timeline</h3>
+            <p class="feature-desc">Chronological log of spatial alerts, keypoint detections, acoustic events, and responder dispatch timestamps.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== DASHBOARD VIEW ==================== -->
+    <div id="view-dashboard" class="app-view">
+      <div class="dashboard-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+          <div class="sidebar-nav">
+            <div class="sidebar-item active" data-tab="overview" onclick="app.switchDashboardTab('overview')">
+              <span class="sidebar-icon">📊</span>
+              <span>Overview</span>
+            </div>
+            <div class="sidebar-item" data-tab="camera" onclick="app.switchDashboardTab('camera')">
+              <span class="sidebar-icon">📹</span>
+              <span>Camera AI</span>
+            </div>
+            <div class="sidebar-item" data-tab="voice" onclick="app.switchDashboardTab('voice')">
+              <span class="sidebar-icon">🎙️</span>
+              <span>Voice AI</span>
+            </div>
+            <div class="sidebar-item" data-tab="map" onclick="app.switchDashboardTab('map')">
+              <span class="sidebar-icon">🗺️</span>
+              <span>Live Map</span>
+            </div>
+            <div class="sidebar-item" data-tab="analytics" onclick="app.switchDashboardTab('analytics')">
+              <span class="sidebar-icon">📈</span>
+              <span>Analytics</span>
+            </div>
+            <div class="sidebar-item" data-tab="settings" onclick="app.switchDashboardTab('settings')">
+              <span class="sidebar-icon">⚙️</span>
+              <span>Settings</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Dashboard Body Content -->
+        <main class="dashboard-body">
+          
+          <!-- Top Dashboard Header -->
+          <div class="dashboard-header">
+            <div class="dashboard-title-area">
+              <h2>AI Guardian Command Center</h2>
+              <p>Autonomous Neural Inference Core: <span class="text-cyan">ONLINE (99.8% Confidence)</span></p>
+            </div>
+            <div class="top-nav-controls">
+              <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search safety logs, contacts...">
+              </div>
+              <button class="btn btn-secondary" onclick="app.toggleNotificationsDrawer()" style="padding: 0.6rem 1rem;">🔔 Alerts</button>
+              <div class="realtime-clock" id="utc-clock">00:00:00 UTC</div>
+            </div>
+          </div>
+
+          <!-- SUBPANEL 1: OVERVIEW -->
+          <div id="dash-panel-overview">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-header">
+                  <span>PROTECTION STATUS</span>
+                  <span>🛡️</span>
+                </div>
+                <div class="stat-value text-cyan">ACTIVE</div>
+                <div class="stat-sub">Multi-modal AI Shields Engaged</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-header">
+                  <span>AI CONFIDENCE SCORE</span>
+                  <span>⚡</span>
+                </div>
+                <div class="stat-value text-emerald">99.4%</div>
+                <div class="stat-sub">Sub-2ms High-Precision Inference</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-header">
+                  <span>TODAY'S ALERTS</span>
+                  <span>⚠️</span>
+                </div>
+                <div class="stat-value" style="color: #FFB800;">0 Threat</div>
+                <div class="stat-sub">1 Safe Route Advisory</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-header">
+                  <span>LOCAL RISK LEVEL</span>
+                  <span>🟢</span>
+                </div>
+                <div class="stat-value text-emerald">LOW (12%)</div>
+                <div class="stat-sub">High Foot-Traffic Zone</div>
+              </div>
+            </div>
+
+            <!-- Quick Action Grid -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+              <div class="feature-card">
+                <h3 style="margin-bottom: 1rem;">System Diagnostic Telemetry</h3>
+                <div style="font-family: monospace; font-size: 0.85rem; color: #94A3B8; line-height: 1.8;">
+                  <div>[OK] Spatial Neural Accelerator: Connected</div>
+                  <div>[OK] Spatial Computer Vision Model (YOLOv8-Pose): Loaded (FP16)</div>
+                  <div>[OK] Acoustic Distress Classifier: Listening @ 48kHz</div>
+                  <div>[OK] Encrypted GPS Beacon Sync: Active (37.7749° N, 122.4194° W)</div>
+                  <div>[OK] Emergency Contact Relays: 3 Contacts Operational</div>
+                </div>
+              </div>
+              <div class="feature-card" style="text-align: center;">
+                <h3 style="margin-bottom: 1rem;">Instant Emergency</h3>
+                <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1.5rem;">Trigger immediate 911 dispatch and broadcast live telemetry.</p>
+                <button class="btn btn-danger w-full" style="padding: 1.2rem; font-size: 1.1rem;" onclick="app.triggerSosModal()">
+                  <span>⚡ DISPATCH EMERGENCY SOS</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBPANEL 2: CAMERA AI -->
+          <div id="dash-panel-camera" class="hidden">
+            <h3 style="margin-bottom: 1rem;">Live Computer Vision Detection Stream</h3>
+            <div class="camera-panel-grid">
+              <div class="feed-container">
+                <div class="feed-hud-top">
+                  <div class="hud-badge">🔴 LIVE STREAM | SPATIAL VISION MATRIX</div>
+                  <div class="hud-badge">FPS: <span id="camera-fps-val">60</span></div>
+                </div>
+                <video id="video-element" autoplay muted playsinline></video>
+                <canvas id="camera-overlay-canvas"></canvas>
+              </div>
+
+              <div class="triton-stream-log">
+                <div class="log-title">
+                  <span>⚡ NEURAL INFERENCE LOG STREAM</span>
+                </div>
+                <div class="log-content" id="triton-log-body">
+                  <div>[SYS] High-speed FP16 Spatial Vision Engine initialized.</div>
+                </div>
+                <div style="margin-top: 1rem;">
+                  <span style="font-size: 0.8rem; color: #888; display: block; margin-bottom: 0.5rem;">SIMULATE SCENARIOS:</span>
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    <button class="map-chip" onclick="cameraEngine.setScenario('safe')">Safe Person</button>
+                    <button class="map-chip" onclick="cameraEngine.setScenario('violence')">Violence</button>
+                    <button class="map-chip" onclick="cameraEngine.setScenario('weapon')">Weapon</button>
+                    <button class="map-chip" onclick="cameraEngine.setScenario('fall')">Fall</button>
+                    <button class="map-chip" onclick="cameraEngine.setScenario('unknown')">Unknown Person</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBPANEL 3: VOICE AI -->
+          <div id="dash-panel-voice" class="hidden">
+            <h3 style="margin-bottom: 1rem;">Acoustic Distress & Keyword Detection</h3>
+            <div class="voice-panel-container">
+              <div class="mic-button-wrapper">
+                <div class="mic-pulse-ring"></div>
+                <button class="mic-btn-main" id="mic-main-btn">🎙️</button>
+              </div>
+              <h4 id="voice-status-text" style="margin-bottom: 1.5rem;">CLICK TO START VOICE GUARDIAN</h4>
+
+              <canvas class="waveform-canvas" id="voice-waveform-canvas"></canvas>
+
+              <div style="width: 100%; max-width: 800px; text-align: left; background: #000; border: 1px solid #141E30; border-radius: 12px; padding: 1.25rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                  <span style="font-size: 0.85rem; color: #888;">KEYWORD SPOTTER LOG</span>
+                  <span style="font-size: 0.85rem; color: #00FF9D;">CONFIDENCE: <span id="voice-confidence-val">99.2%</span></span>
+                </div>
+                <div id="voice-keyword-log" style="font-family: monospace; font-size: 0.8rem; color: #ccc; max-height: 150px; overflow-y: auto;">
+                  <div>[READY] Acoustic neural network listening for high pitch stress spikes & keywords...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBPANEL 4: LIVE MAP -->
+          <div id="dash-panel-map" class="hidden">
+            <h3 style="margin-bottom: 1rem;">Interactive Spatial Safe Navigation</h3>
+            <div class="map-view-wrapper">
+              <div class="map-controls-floating">
+                <div class="map-chip active">📍 Current Location</div>
+                <div class="map-chip">🚓 Police Stations</div>
+                <div class="map-chip">🏥 Hospitals</div>
+                <div class="map-chip">⚠️ Danger Zones</div>
+              </div>
+              <canvas id="live-map-canvas"></canvas>
+            </div>
+          </div>
+
+          <!-- SUBPANEL 5: ANALYTICS -->
+          <div id="dash-panel-analytics" class="hidden">
+            <h3 style="margin-bottom: 1rem;">Safety Telemetry & Incident Analytics</h3>
+            <div class="feature-card" style="margin-bottom: 2rem;">
+              <h4 style="margin-bottom: 1rem;">Weekly Threat Detection Trend</h4>
+              <canvas id="threat-chart-canvas" style="width: 100%; height: 260px;"></canvas>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-header">AVERAGE RESPONSE TIME</div>
+                <div class="stat-value text-cyan">1.4 sec</div>
+                <div class="stat-sub">Sub-Millisecond Edge Inference</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-header">WEEKLY SAFETY SCORE</div>
+                <div class="stat-value text-emerald">98 / 100</div>
+                <div class="stat-sub">Optimal Security Profile</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBPANEL 6: SETTINGS -->
+          <div id="dash-panel-settings" class="hidden">
+            <h3 style="margin-bottom: 1.5rem;">System Configurations & Privacy Controls</h3>
+            <div class="feature-card" style="max-width: 800px;">
+              <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">AI Detection Sensitivity</label>
+                <input type="range" min="1" max="100" value="85" style="width: 100%; accent-color: #00F2FE;">
+              </div>
+              <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">Emergency Contact 1 (SMS & Call)</label>
+                <input type="text" value="+1 (555) 234-5678 - Sarah (Sister)" style="width: 100%; padding: 0.75rem; background: #000; border: 1px solid #333; color: #fff; border-radius: 8px;">
+              </div>
+              <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-weight: bold; margin-bottom: 0.5rem;">Stealth Video Recording</label>
+                <input type="checkbox" checked style="accent-color: #00F2FE;"> Enable automatic cloud upload upon SOS
+              </div>
+              <button class="btn btn-primary" onclick="alert('Settings saved successfully!')">Save Preferences</button>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SOS EMERGENCY COUNTDOWN MODAL -->
+  <div id="sos-modal" class="sos-modal-overlay hidden">
+    <div class="sos-modal-card">
+      <h2 style="color: #FF2A6D; font-size: 2.2rem; margin-bottom: 0.5rem;">🚨 EMERGENCY SOS ACTIVATED</h2>
+      <p style="color: #bbb; font-size: 0.95rem;">Broadcasting live GPS coordinates, video feed, and alerting police & emergency contacts in:</p>
+      
+      <div class="sos-countdown-circle">
+        <span id="sos-countdown-num">3</span>
+      </div>
+
+      <p style="font-size: 0.85rem; color: #FF2A6D; margin-bottom: 1.5rem;" id="sos-seconds-text">3 seconds remaining</p>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <button class="btn btn-danger" onclick="app.confirmInstantSos()">DISPATCH NOW IMMEDIATELY</button>
+        <button class="btn btn-secondary" onclick="app.cancelSosModal()">CANCEL SOS</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICATIONS DRAWER -->
+  <div id="notif-drawer" class="assistant-drawer hidden" style="top: 5rem; right: 2rem; bottom: auto; height: 400px;">
+    <div class="assistant-header">
+      <span style="font-weight: bold; color: #00FF9D;">SYSTEM NOTIFICATIONS</span>
+      <button onclick="app.toggleNotificationsDrawer()" style="background: none; border: none; color: #fff; cursor: pointer; font-size: 1.2rem;">✕</button>
+    </div>
+    <div class="assistant-body" id="notif-drawer-body">
+      <div style="font-size: 0.8rem; color: #888;">No critical security incidents reported today.</div>
+    </div>
+  </div>
+
+  <!-- FLOATING AI GUARDIAN ASSISTANT -->
+  <div class="floating-assistant-bubble" onclick="assistantEngine.toggleDrawer()">
+    🤖
+  </div>
+
+  <div id="assistant-drawer" class="assistant-drawer hidden">
+    <div class="assistant-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="color: #00F2FE;">🛡️ AI GUARDIAN ASSISTANT</span>
+      </div>
+      <button onclick="assistantEngine.toggleDrawer()" style="background: none; border: none; color: #fff; cursor: pointer; font-size: 1.2rem;">✕</button>
+    </div>
+    <div class="assistant-body" id="assistant-chat-body">
+      <div class="chat-bubble ai">
+        Hello! I am your AI Guardian. I am actively monitoring your perimeter and analyzing real-time threat intelligence. How can I assist you?
+      </div>
+    </div>
+    <div class="assistant-input-area">
+      <input type="text" id="assistant-input" placeholder="Type prompt or ask for nearest police station...">
+      <button class="btn btn-primary" onclick="assistantEngine.sendMessage()" style="padding: 0.5rem 0.85rem;">Send</button>
+    </div>
+  </div>
+
+  <!-- APP FOOTER -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 style="font-size: 1.3rem; font-weight: 800; color: #fff;">AI GUARDIAN</h4>
+        <p style="color: var(--cyan-bright); font-size: 0.85rem; margin-bottom: 0.5rem;">Next-Gen Multi-Modal AI Platform for Women's Safety</p>
+        <p style="color: var(--text-muted); font-size: 0.8rem;">Autonomous Real-Time Protection & Intelligence System</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#home" onclick="app.switchView('landing')">Home</a>
+        <a href="#features" onclick="app.scrollToSection('features-section')">Features</a>
+        <a href="#dashboard" onclick="app.switchView('dashboard', 'overview')">Dashboard</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support & Legal</h4>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#emergency">Emergency Support</a>
+        <a href="#contact">Contact Support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub Repository</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn Showcase</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AI Guardian. Multi-Modal Neural Core. All Rights Reserved.</span>
+    </div>
+  </footer>
+
+  <!-- JavaScript Engine Modules -->
+  <script src="js/neural-background.js"></script>
+  <script src="js/camera-ai.js"></script>
+  <script src="js/voice-ai.js"></script>
+  <script src="js/live-map.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/assistant.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
